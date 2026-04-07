@@ -1,0 +1,38 @@
+
+> nextn@0.1.0 dev
+> next dev --turbopack -p 9002
+
+   ▲ Next.js 15.5.9 (Turbopack)
+   - Local:        http://localhost:9002
+   - Network:      http://192.168.0.2:9002
+
+ ✓ Starting...
+ ✓ Ready in 1457ms
+ ○ Compiling / ...
+ ✓ Compiled / in 11.5s
+ GET / 200 in 13536ms
+ GET / 200 in 244ms
+Error starting session: Error [GenkitError]: FAILED_PRECONDITION: Please pass in the API key or set the GEMINI_API_KEY or GOOGLE_API_KEY environment variable.
+For more details see https://genkit.dev/docs/plugins/google-genai/
+    at __TURBOPACK__module__evaluation__ (src/ai/genkit.ts:2:1)
+    at __TURBOPACK__module__evaluation__ (src/ai/flows/generate-content-from-topic.ts:11:1)
+    at __TURBOPACK__module__evaluation__ (src/app/actions/agent-actions.ts:3:1)
+    at __TURBOPACK__module__evaluation__ (.next-internal/server/app/page/actions.js (server actions loader):1:1)
+    at __TURBOPACK__module__evaluation__ (.next/server/chunks/ssr/[root-of-the-server]__65bb574e._.js:554:372)
+    at Object.<anonymous> (.next/server/app/page.js:34:3)
+  1 | import {genkit} from 'genkit';
+> 2 | import {googleAI} from '@genkit-ai/google-genai';
+    | ^
+  3 |
+  4 | export const ai = genkit({
+  5 |   plugins: [googleAI()], {
+  source: undefined,
+  status: 'FAILED_PRECONDITION',
+  detail: undefined,
+  code: 400,
+  originalMessage: 'Please pass in the API key or set the GEMINI_API_KEY or GOOGLE_API_KEY environment variable.\n' +
+    'For more details see https://genkit.dev/docs/plugins/google-genai/',
+  ignoreFailedSpan: true,
+  traceId: '9e5fe9f0ca81f2431a6a689d0ed0b7bc'
+}
+ POST / 200 in 381ms
